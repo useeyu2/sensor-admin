@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import ContentManagement from './pages/ContentManagement';
 import UserManagement from './pages/UserManagement';
 import Settings from './pages/Settings';
+import Sessions from './pages/Sessions';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="content" element={<ContentManagement />} />
           <Route path="users" element={<UserManagement />} />
+          <Route path="sessions" element={<Sessions />} />
           <Route path="settings" element={<Settings />} />
         </Route>
       </Routes>

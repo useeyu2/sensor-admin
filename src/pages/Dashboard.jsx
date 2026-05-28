@@ -33,7 +33,7 @@ const Dashboard = () => {
             <span className="trend positive">+3 new</span>
           </div>
         </div>
-        <div className="metric-card">
+        <div className="metric-card clickable" onClick={() => navigate('/sessions')}>
           <div className="metric-icon revenue">
             <Activity size={32} color="white" />
           </div>

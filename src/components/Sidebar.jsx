@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Users, FileText, Settings, LogOut } from 'lucide-react';
+import { LayoutDashboard, Users, FileText, Settings, LogOut, Activity } from 'lucide-react';
 import './Sidebar.css';
 
 const Sidebar = () => {
@@ -23,6 +23,10 @@ const Sidebar = () => {
         <NavLink to="/users" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
           <Users size={20} />
           <span>Users</span>
+        </NavLink>
+        <NavLink to="/sessions" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
+          <Activity size={20} />
+          <span>Sessions</span>
         </NavLink>
       </nav>
       
