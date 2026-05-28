@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { LayoutDashboard, Users, FileText, Settings, LogOut, Activity } from 'lucide-react';
 import './Sidebar.css';
 
-const Sidebar = () => {
+const Sidebar = ({ onClose }) => {
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
@@ -12,26 +12,26 @@ const Sidebar = () => {
       </div>
       
       <nav className="sidebar-nav">
-        <NavLink to="/dashboard" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
+        <NavLink to="/dashboard" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'} onClick={onClose}>
           <LayoutDashboard size={20} />
           <span>Dashboard</span>
         </NavLink>
-        <NavLink to="/content" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
+        <NavLink to="/content" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'} onClick={onClose}>
           <FileText size={20} />
           <span>Content</span>
         </NavLink>
-        <NavLink to="/users" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
+        <NavLink to="/users" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'} onClick={onClose}>
           <Users size={20} />
           <span>Users</span>
         </NavLink>
-        <NavLink to="/sessions" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
+        <NavLink to="/sessions" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'} onClick={onClose}>
           <Activity size={20} />
           <span>Sessions</span>
         </NavLink>
       </nav>
       
       <div className="sidebar-footer">
-        <NavLink to="/settings" className="nav-item">
+        <NavLink to="/settings" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'} onClick={onClose}>
           <Settings size={20} />
           <span>Settings</span>
         </NavLink>

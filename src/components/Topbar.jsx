@@ -1,14 +1,19 @@
 import React from 'react';
-import { Search, Bell } from 'lucide-react';
+import { Search, Bell, Menu } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import './Topbar.css';
 
-const Topbar = () => {
+const Topbar = ({ onMenuClick }) => {
   return (
     <header className="topbar">
-      <div className="search-bar">
-        <Search size={18} className="search-icon" />
-        <input type="text" placeholder="Search..." />
+      <div className="topbar-left">
+        <button className="mobile-menu-btn" onClick={onMenuClick}>
+          <Menu size={24} />
+        </button>
+        <div className="search-bar">
+          <Search size={18} className="search-icon" />
+          <input type="text" placeholder="Search..." />
+        </div>
       </div>
       
       <div className="topbar-actions">

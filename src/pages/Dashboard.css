@@ -121,3 +121,13 @@
   font-size: 13px;
   color: var(--text-secondary);
 }
+
+@media (max-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header {
+    margin-top: 8px;
+  }
+}

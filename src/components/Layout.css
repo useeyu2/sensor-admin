@@ -17,3 +17,41 @@
   overflow-y: auto;
   padding: 32px;
 }
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+  backdrop-filter: blur(2px);
+}
+
+.sidebar-container {
+  height: 100%;
+  z-index: 50;
+  background-color: var(--sidebar-bg);
+}
+
+@media (max-width: 768px) {
+  .sidebar-overlay {
+    display: block;
+  }
+
+  .sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .sidebar-container.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+}
