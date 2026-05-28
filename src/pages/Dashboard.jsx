@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Users, BookOpen, Activity } from 'lucide-react';
 import './Dashboard.css';
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   return (
     <div className="dashboard animate-fade-in">
       <div className="dashboard-header">
@@ -10,16 +13,20 @@ const Dashboard = () => {
       </div>
 
       <div className="metrics-grid">
-        <div className="metric-card">
-          <div className="metric-icon users"></div>
+        <div className="metric-card clickable" onClick={() => navigate('/users')}>
+          <div className="metric-icon users">
+            <Users size={32} color="white" />
+          </div>
           <div className="metric-info">
             <h3>Total Users</h3>
             <h2>1,248</h2>
             <span className="trend positive">+12% this week</span>
           </div>
         </div>
-        <div className="metric-card">
-          <div className="metric-icon content"></div>
+        <div className="metric-card clickable" onClick={() => navigate('/content')}>
+          <div className="metric-icon content">
+            <BookOpen size={32} color="white" />
+          </div>
           <div className="metric-info">
             <h3>Total Courses</h3>
             <h2>42</h2>
@@ -27,7 +34,9 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="metric-card">
-          <div className="metric-icon revenue"></div>
+          <div className="metric-icon revenue">
+            <Activity size={32} color="white" />
+          </div>
           <div className="metric-info">
             <h3>Active Sessions</h3>
             <h2>89</h2>
